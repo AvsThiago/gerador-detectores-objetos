@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
- This class provides many methods for pre processing of images,
+ These methods provides ways to pre processing images,
  the main objective is to encapsulate methods that will
  be used in the main projects.
 
