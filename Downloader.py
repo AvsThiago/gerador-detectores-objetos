@@ -76,7 +76,7 @@ def parse_arguments():
                         required=True)
     parser.add_argument('--out',
                         help='Where the images will be saved.', required=True)
-    parser.add_argument('--timeout',
+    parser.add_argument('--timeout',type=float,
                         help='Maximum time to download each image.', default=2)
     parser.add_argument('--img-extensions',
                         help='Tuple of image extensions that will be accepted.',
