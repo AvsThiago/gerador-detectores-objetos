@@ -16,7 +16,8 @@ import numpy as np
 def compare_images(image1, image2):
     """Compare two images and return they are"""
     try:
-        return image1.shape == image2.shape and not(np.bitwise_xor(image1, image2).any())
+        return image1.shape == image2.shape and \
+                not(np.bitwise_xor(image1, image2).any())
     except Exception as e:
         print(e)
         return False

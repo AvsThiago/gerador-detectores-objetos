@@ -77,15 +77,17 @@ def parse_arguments():
     parser.add_argument('--out',
                         help='Where the images will be saved.', required=True)
     parser.add_argument('--timeout',type=float,
-                        help='Maximum time to download each image.', default=2)
+                        help='Maximum time to download each image. <2>',
+                        default=2)
     parser.add_argument('--img-extensions',
-                        help='Tuple of image extensions that will be accepted.',
+                        help='Tuple of image extensions that will be accepted. '
+                        '(".jpg", ".jpeg", ".png", ".bmp")',
                         default=(".jpg", ".jpeg", ".png", ".bmp"))
     parser.add_argument('--prefix',
-                        help='Name prefix to save images.',
+                        help='Name prefix to save images. <img>',
                         default="img")
     parser.add_argument('--out-extension',
-                        help='Extension to use when sava an image.',
+                        help='Extension to use when sava an image. <.png>',
                         default=".png")
     parser.add_argument('--default-images',
                         help="Path that contains default images, these will be"
@@ -99,7 +101,7 @@ def parse_arguments():
                         action='store_true')
     parser.add_argument('--max-size',
                         help="Resizes the bigger side of an image to "
-                        "fit in this param.",
+                        "fit in this param. <500.0>",
                         type=float, default=500.0)
     parser.add_argument('--no-std-names',
                         help="Don't standardize image names using --prefix",

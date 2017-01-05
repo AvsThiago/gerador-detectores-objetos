@@ -21,7 +21,8 @@ def parse_arguments():
                         help='Name of output file with a list of images path.',
                         required=True)
     parser.add_argument('--img-extensions',
-                        help='Tuple of image extensions that will be accepted.',
+                        help='Tuple of image extensions that will be accepted. '
+                        '(".jpg", ".jpeg", ".png", ".bmp")',
                         default=(".jpg", ".jpeg", ".png", ".bmp"))
     return parser.parse_args()
 

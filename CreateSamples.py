@@ -38,9 +38,9 @@ def parse_arguments():
                         ' amount of color tolerance can be specified by '
                         '-bgthresh. All pixels withing bgcolor-bgthresh and '
                         'bgcolor+bgthresh range are interpreted as '
-                        'transparent.')
+                        'transparent. <0>')
     parser.add_argument('--bgthresh',
-                        help='Background color threshold.')
+                        help='Background color threshold.<80>')
     parser.add_argument('--inv',
                         help='If specified, colors will be inverted.',
                         action='store_true')
@@ -51,21 +51,21 @@ def parse_arguments():
                         help='Save all created images in a folder.')
     parser.add_argument('--maxidev',
                         help='Maximal intensity deviation of pixels in '
-                        'foreground samples.')
+                        'foreground samples. <40>')
     parser.add_argument('--maxzangle', type=float,
                         help='Maximum rotation in angle Z must be given in '
-                        'radians.')
+                        'radians. <0.50000>')
     parser.add_argument('--maxxangle', type=float,
                         help='Maximum rotation in angle X must be given in '
-                        'radians.')
+                        'radians. <1.10000>')
     parser.add_argument('--maxyangle', type=float,
                         help='Maximum rotation in angle Y must be given in '
-                        'radians.')
+                        'radians. <1.10000>')
     parser.add_argument('--height',
-                        help='Height (in pixels) of the output samples.',
+                        help='Height (in pixels) of the output samples. <24>',
                         default='24')
     parser.add_argument('--width',
-                        help='Width (in pixels) of the output samples.',
+                        help='Width (in pixels) of the output samples. <24>',
                         default='24')
 
     return parser.parse_args()
@@ -196,7 +196,8 @@ def generate_vec_file(args, path_list, file_name):
         #If the user wants to create a vec file, so calls opencv to create it.
         command = " ".join(["opencv_createsamples -vec", args.vec,
                             "-info", os.path.join(path_list, file_name),
-                            "-num", str(args.num)])
+                            "-num", str(args.num), "-h", str(args.height),
+                            "-w", str(args.width)])
         execute_commands([command])
     if args.out_img_folder == None:
         """If the user don't want to save created samples,
