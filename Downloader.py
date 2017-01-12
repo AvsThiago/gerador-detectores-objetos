@@ -72,8 +72,7 @@ def parse_arguments():
     """Parses arguments choosen by the user."""
     parser = argparse.ArgumentParser()
     parser.add_argument('--urls',
-                        help='File where urls are, can be an site or a file.',
-                        required=True)
+                        help='File where urls are, can be an site or a file.')
     parser.add_argument('--out',
                         help='Where the images will be saved.', required=True)
     parser.add_argument('--timeout',type=float,
@@ -118,8 +117,8 @@ if __name__ == '__main__':
     try:
         args = parse_arguments()
         validations(args)
-
-        download_images_by_list(args.urls, args.out, args.timeout,
+        if args.urls != None:
+            download_images_by_list(args.urls, args.out, args.timeout,
                                 args.img_extensions)
         #Verify if there is some corrupted image, if yes, delete it.
         prp.remove_corrupted_img_path(args.out, args.img_extensions)
