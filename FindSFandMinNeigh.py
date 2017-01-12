@@ -158,7 +158,7 @@ def process_bb(args):
                 else:
                     mn_converged.pop()
             #Iterates over all images
-            for i, img in enumerate(imgs_loaded[:100]):
+            for i, img in enumerate(imgs_loaded):
                 x = int(imgs[i][2])
                 y = int(imgs[i][3])
                 w = int(imgs[i][4])
@@ -180,44 +180,3 @@ if __name__ == '__main__':
     args = parse_arguments()
     """Processes the bounding boxes"""
     process_bb(args)
-
-"""
-Just some tests
-
-thiago@NoThiago:/tenacious/Projetos/Python/rmc$ python \
-FindSFandMinNeigh.py --cascade-file ./bud.xml --list-of-images IoU/images.lst
-
-imagens carregadas
-11.7608993869 1.01 1
-14.9421513724 1.01 2
-17.2791647037 1.01 3
-19.5369352573 1.01 4
-21.3052754519 1.02 2
-25.9422066108 1.02 3
-28.4374411223 1.02 4
-29.9473355393 1.03 4
-32.6103687937 1.04 4
-33.535151138 1.05 4
-34.1895558244 1.06 4
-34.6404146868 1.07 4
-
-thiago@NoThiago:/tenacious/Projetos/Python/rmc$ python \
-FindSFandMinNeigh.py --cascade-file ./bud.xml --list-of-images IoU/images.lst \
- --resize-predict
-
-imagens carregadas
-19.2822310736 1.01 1
-23.204152833 1.01 2
-26.7174457047 1.01 3
-30.359548311 1.01 4
-32.7544552385 1.02 2
-39.205029059 1.02 3
-43.4669310955 1.02 4
-45.5354363362 1.03 4
-46.6643763919 1.04 3
-50.2056377186 1.04 4
-50.6796756712 1.05 4
-52.349141331 1.06 4
-52.6294877208 1.07 4
-avsthiago@NoThiago:/tenacious/Projetos/Python/rmc$
-"""
