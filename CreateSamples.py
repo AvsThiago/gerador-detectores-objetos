@@ -123,7 +123,8 @@ def generate_commands_to_opencv(args):
         os.mkdir(os.path.join(temporary_path, str(i)))
         path = os.path.join(temporary_path, str(i))
         #If is the last line the created command will differ in samples number
-        if i == num_pos:
+
+        if i < num_pos:
             lines.append(generate_line(args, num_samples_x_pos,
                         pos.strip('\n'), path))
         else:
