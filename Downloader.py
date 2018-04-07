@@ -2,7 +2,7 @@
 
 """
  This class provides many methods for download images,
- from a list of urls that can be in a file or a website.
+ from a list of urls that can be from a file or a website.
  After downloaded, the user can automatcally resize,
  rename, transform to gray scale up or down and remove
  default stock images.
